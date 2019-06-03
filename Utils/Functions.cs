@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Graphics;
 using Steamworks;
 using Steamworks.Data;
 using System.Collections.Generic;
@@ -8,8 +9,28 @@ using System.Threading.Tasks;
 namespace Utils
 {
 #pragma warning disable 4014
-    public class Functions
+    public static class Functions
     {
+        public static bool IsSteamRunning { get; set; }
+        public static bool IsOverlayActive { get; set; }
+
+        public static SpriteFont Font { get; private set; }
+        public static string STEAM_NOT_RUNNING_ERROR_MESSAGE { get; private set; } = "Please start your steam client to receive data!";
+        
+        public static void LoadContent(ContentManager Content, out string userName)
+        {
+            Font = Content.Load<SpriteFont>(@"Font");
+
+            if (IsSteamRunning) userName = ReplaceUnsupportedChars(Font, SteamClient.Name).Trim();
+            else userName = "";
+        }
+
+        public static void ShutdownSteamClient()
+        {
+            SteamFriends.OnGameOverlayActivated -= SteamFriends_OnGameOverlayActivated;
+            SteamClient.Shutdown();
+        }
+
         /// <summary>
         /// Replaces characters not supported by your spritefont.
         /// </summary>
@@ -70,6 +91,11 @@ namespace Utils
         public static async Task<int> GetPlayerCount()
         {
             return await SteamUserStats.PlayerCountAsync();
+        }
+
+        public static void SteamFriends_OnGameOverlayActivated()
+        {
+            IsOverlayActive = !IsOverlayActive;
         }
     }
 }

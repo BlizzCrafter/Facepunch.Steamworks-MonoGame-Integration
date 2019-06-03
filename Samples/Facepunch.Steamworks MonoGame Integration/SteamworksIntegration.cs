@@ -17,9 +17,6 @@ namespace Facepunch.Steamworks_MonoGame_Integration
         private readonly GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
 
-        private SpriteFont _Font;
-        private const string STEAM_NOT_RUNNING_ERROR_MESSAGE = "Please start your steam client to receive data!";
-
         private Texture2D _UserAvatar;
         private string _UserName;
         private int _UserLevel;
@@ -35,8 +32,6 @@ namespace Facepunch.Steamworks_MonoGame_Integration
         private float _FeetTraveled;
         private float _MaxFeetTraveled;
 
-        private bool _IsSteamRunning;
-        private bool _IsOverlayActive;
         private bool _OwnsApp;
         private bool _OwnsAppThroughFamilySharing;
         private bool _OwnsAppThroughFreeWeekend;
@@ -51,15 +46,17 @@ namespace Facepunch.Steamworks_MonoGame_Integration
 
         protected override void Initialize()
         {
+            base.Initialize();
+
             Exiting += SteamworksIntegration_Exiting;
 
             try
             {
                 SteamClient.Init(480);
 
-                _IsSteamRunning = true;
+                Functions.IsSteamRunning = true;
 
-                SteamFriends.OnGameOverlayActivated += SteamFriends_OnGameOverlayActivated;
+                SteamFriends.OnGameOverlayActivated += Functions.SteamFriends_OnGameOverlayActivated;
                 SteamUserStats.OnUserStatsReceived += SteamUserStats_OnUserStatsReceived;
                 SteamUserStats.RequestCurrentStats();
 
@@ -103,36 +100,30 @@ namespace Facepunch.Steamworks_MonoGame_Integration
                 Console.Out.WriteLine(e.ToString());
             }
 
-            base.Initialize();
+            Functions.LoadContent(Content, out _UserName);
         }
         private void SteamworksIntegration_Exiting(object sender, EventArgs e)
         {
-            if (_IsSteamRunning)
+            if (Functions.IsSteamRunning)
             {
-                SteamFriends.OnGameOverlayActivated -= SteamFriends_OnGameOverlayActivated;
                 SteamUserStats.OnUserStatsReceived -= SteamUserStats_OnUserStatsReceived;
                 _UserAvatar.Dispose();
-                SteamClient.Shutdown();
+                Functions.ShutdownSteamClient();
             }
         }
 
         protected override void LoadContent()
         {
+            base.LoadContent();
+
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
-            _Font = Content.Load<SpriteFont>(@"Font");
-
-            if (_IsSteamRunning)
-            {
-                _UserName = Functions.ReplaceUnsupportedChars(_Font, SteamClient.Name).Trim();
-            }
         }
 
         protected override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
 
-            if (_IsSteamRunning) SteamClient.RunCallbacks();
+            if (Functions.IsSteamRunning) SteamClient.RunCallbacks();
         }
 
         protected override void Draw(GameTime gameTime)
@@ -141,19 +132,19 @@ namespace Facepunch.Steamworks_MonoGame_Integration
 
             spriteBatch.Begin();
 
-            if (_IsSteamRunning)
+            if (Functions.IsSteamRunning)
             {
                 //Draw your Steam Avatar and Steam Name
                 if (_UserAvatar != null)
                 {
                     spriteBatch.Draw(_UserAvatar, new Vector2(10, 10), null, Color.White);
-                    spriteBatch.DrawString(_Font, 
+                    spriteBatch.DrawString(Functions.Font, 
 $@"Name: {_UserName}
 Level: { _UserLevel}
 Status: {SteamClient.State}",
                     new Vector2(15 + _UserAvatar.Width, 10), Color.Yellow);
                 }
-                else spriteBatch.DrawString(_Font, "Loading Avatar...", new Vector2(15, 15), Color.White);
+                else spriteBatch.DrawString(Functions.Font, "Loading Avatar...", new Vector2(15, 15), Color.White);
 
                 string detailsLeft =
 $@"AppID: {SteamClient.AppId}
@@ -166,7 +157,7 @@ Players: {_PlayerCount}
 Playtime: {SteamUtils.SecondsSinceAppActive},
 InactiveTime: {SteamUtils.SecondsSinceComputerActive}
 ServerTime: {SteamUtils.SteamServerTime}
-OverlayActive: {_IsOverlayActive}
+OverlayActive: {Functions.IsOverlayActive}
 
 Games: {_GamesPlayed}
 Wins: {_Wins}
@@ -181,15 +172,15 @@ Traveled (Max): {_MaxFeetTraveled}";
                 }
 
                 // Details
-                spriteBatch.DrawString(_Font, detailsLeft, new Vector2(15, 100), Color.White);
-                spriteBatch.DrawString(_Font, detailsRight, new Vector2(_Font.MeasureString(detailsLeft).X / 1.25f, 175), Color.White);
+                spriteBatch.DrawString(Functions.Font, detailsLeft, new Vector2(15, 100), Color.White);
+                spriteBatch.DrawString(Functions.Font, detailsRight, new Vector2(Functions.Font.MeasureString(detailsLeft).X / 1.25f, 175), Color.White);
             }
             else
             {
-                spriteBatch.DrawString(_Font, STEAM_NOT_RUNNING_ERROR_MESSAGE,
+                spriteBatch.DrawString(Functions.Font, Functions.STEAM_NOT_RUNNING_ERROR_MESSAGE,
                     new Vector2(
-                        graphics.PreferredBackBufferWidth / 2f - _Font.MeasureString(STEAM_NOT_RUNNING_ERROR_MESSAGE).X / 2f,
-                        graphics.PreferredBackBufferHeight / 2f - _Font.MeasureString(STEAM_NOT_RUNNING_ERROR_MESSAGE).Y / 2f), Color.White);
+                        graphics.PreferredBackBufferWidth / 2f - Functions.Font.MeasureString(Functions.STEAM_NOT_RUNNING_ERROR_MESSAGE).X / 2f,
+                        graphics.PreferredBackBufferHeight / 2f - Functions.Font.MeasureString(Functions.STEAM_NOT_RUNNING_ERROR_MESSAGE).Y / 2f), Color.White);
             }
 
             spriteBatch.End();
@@ -207,11 +198,6 @@ Traveled (Max): {_MaxFeetTraveled}";
                 _FeetTraveled = SteamUserStats.GetStatFloat("FeetTraveled");
                 _MaxFeetTraveled = SteamUserStats.GetStatFloat("MaxFeetTraveled");
             }
-        }
-
-        private void SteamFriends_OnGameOverlayActivated()
-        {
-            _IsOverlayActive = !_IsOverlayActive;
         }
     }
 }
