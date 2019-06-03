@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facepunch.Steamworks MonoGa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utils", "Utils\Utils.csproj", "{249D4A72-DB5D-4D76-BDEA-AA6F05F52478}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hello Facepunch.Steamworks", "Samples\Hello Facepunch.Steamworks\Hello Facepunch.Steamworks.csproj", "{781C6807-B943-44C4-BD45-A69258538FC9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,10 @@ Global
 		{249D4A72-DB5D-4D76-BDEA-AA6F05F52478}.Debug|x64.Build.0 = Debug|x64
 		{249D4A72-DB5D-4D76-BDEA-AA6F05F52478}.Release|x64.ActiveCfg = Release|x64
 		{249D4A72-DB5D-4D76-BDEA-AA6F05F52478}.Release|x64.Build.0 = Release|x64
+		{781C6807-B943-44C4-BD45-A69258538FC9}.Debug|x64.ActiveCfg = Debug|x64
+		{781C6807-B943-44C4-BD45-A69258538FC9}.Debug|x64.Build.0 = Debug|x64
+		{781C6807-B943-44C4-BD45-A69258538FC9}.Release|x64.ActiveCfg = Release|x64
+		{781C6807-B943-44C4-BD45-A69258538FC9}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
