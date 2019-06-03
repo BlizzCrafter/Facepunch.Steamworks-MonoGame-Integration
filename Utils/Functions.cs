@@ -13,16 +13,17 @@ namespace Utils
     {
         public static bool IsSteamRunning { get; set; }
         public static bool IsOverlayActive { get; set; }
+        public static string UserName { get; set; }
 
         public static SpriteFont Font { get; private set; }
         public static string STEAM_NOT_RUNNING_ERROR_MESSAGE { get; private set; } = "Please start your steam client to receive data!";
         
-        public static void LoadContent(ContentManager Content, out string userName)
+        public static void LoadContent(ContentManager Content)
         {
             Font = Content.Load<SpriteFont>(@"Font");
 
-            if (IsSteamRunning) userName = ReplaceUnsupportedChars(Font, SteamClient.Name).Trim();
-            else userName = "";
+            if (IsSteamRunning) UserName = ReplaceUnsupportedChars(Font, SteamClient.Name).Trim();
+            else UserName = "";
         }
 
         public static void ShutdownSteamClient()
