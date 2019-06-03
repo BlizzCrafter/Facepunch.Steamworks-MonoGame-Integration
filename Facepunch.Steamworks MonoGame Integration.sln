@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facepunch.Steamworks MonoGame Integration", "Samples\Facepunch.Steamworks MonoGame Integration\Facepunch.Steamworks MonoGame Integration.csproj", "{E38C1127-3429-4ED4-9952-071F038F3672}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utils", "Utils\Utils.csproj", "{249D4A72-DB5D-4D76-BDEA-AA6F05F52478}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -15,6 +17,10 @@ Global
 		{E38C1127-3429-4ED4-9952-071F038F3672}.Debug|x64.Build.0 = Debug|x64
 		{E38C1127-3429-4ED4-9952-071F038F3672}.Release|x64.ActiveCfg = Release|x64
 		{E38C1127-3429-4ED4-9952-071F038F3672}.Release|x64.Build.0 = Release|x64
+		{249D4A72-DB5D-4D76-BDEA-AA6F05F52478}.Debug|x64.ActiveCfg = Debug|x64
+		{249D4A72-DB5D-4D76-BDEA-AA6F05F52478}.Debug|x64.Build.0 = Debug|x64
+		{249D4A72-DB5D-4D76-BDEA-AA6F05F52478}.Release|x64.ActiveCfg = Release|x64
+		{249D4A72-DB5D-4D76-BDEA-AA6F05F52478}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
