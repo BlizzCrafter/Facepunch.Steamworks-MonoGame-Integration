@@ -18,7 +18,6 @@ namespace Facepunch.Steamworks_MonoGame_Integration
         private SpriteBatch spriteBatch;
 
         private Texture2D _UserAvatar;
-        private string _UserName;
         private int _UserLevel;
         private SteamId _UserID;
         private string _CurrentLanguage = "";
@@ -100,7 +99,7 @@ namespace Facepunch.Steamworks_MonoGame_Integration
                 Console.Out.WriteLine(e.ToString());
             }
 
-            Functions.LoadContent(Content, out _UserName);
+            Functions.LoadContent(Content);
         }
         private void SteamworksIntegration_Exiting(object sender, EventArgs e)
         {
@@ -139,7 +138,7 @@ namespace Facepunch.Steamworks_MonoGame_Integration
                 {
                     spriteBatch.Draw(_UserAvatar, new Vector2(10, 10), null, Color.White);
                     spriteBatch.DrawString(Functions.Font, 
-$@"Name: {_UserName}
+$@"Name: {Functions.UserName}
 Level: { _UserLevel}
 Status: {SteamClient.State}",
                     new Vector2(15 + _UserAvatar.Width, 10), Color.Yellow);
