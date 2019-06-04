@@ -77,6 +77,41 @@ private void Game1_Exiting(object sender, EventArgs e)
 
 ## Samples
 
+The greatest thing about Facepunch.Steamworks is, that you can write code in native C#! Say bye bye to manual function calling and finally code like this again:
+
+```cs
+foreach ( var friend in SteamFriends.GetFriends() )
+{
+    Console.WriteLine( "{friend.Id}: {friend.Name}" );
+    Console.WriteLine( "{friend.IsOnline} / {friend.SteamLevel}" );
+    
+    friend.SendMessage( "Hello Friend" );
+}
+```
+
+```cs
+public static async Task<Texture2D> GetUserImage(SteamId id, GraphicsDevice device)
+{
+    var image = await SteamFriends.GetMediumAvatarAsync(id);
+
+    if (image.HasValue)
+    {
+        Texture2D avatarTexture = new Texture2D(device, (int)image.Value.Width, (int)image.Value.Height, false, SurfaceFormat.Color);
+        avatarTexture.SetData(image.Value.Data, 0, image.Value.Data.Length);
+        return avatarTexture;
+    }
+    else return null;
+}
+
+UserAvatar = GetUserImage(UserID, GraphicsDevice).Result;
+
+```
+
+More samples here:
+https://github.com/Facepunch/Facepunch.Steamworks
+
+### Included Sample Projects
+
 - **Hello Hello Facepunch.Steamworks**: Simple sample which sets up bare basics of Steamworks.Net and displaying a welcome message which includes your steam user name.
 - **AchievementHunter**: Simple sample which shows you the correct way of implementing achievements and stats as well as storing them on the steam server. It's based upon the Steamworks Example 'SpaceWar' included with the Steamworks SDK. 
 - **Facepunch.Steamworks MonoGame Integration**: Extendend sample which shows some features of the SteamAPI like UserStats, PersonaState, LeaderboardData, NumberOfCurrentPlayers, Steam User Avatar and so on.
