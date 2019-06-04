@@ -1,7 +1,7 @@
 [![Twitter Follow](https://img.shields.io/twitter/follow/SandboxBlizz.svg?style=flat-square&label=Follow&logo=twitter)](https://twitter.com/SandboxBlizz)
 
 # Facepunch.Steamworks MonoGame Integration
-Facepunch.Steamworks + MonoGame.Framework - the easiest SteamAPI Integration for your app!
+Facepunch.Steamworks + MonoGame.Framework = the easiest SteamAPI Integration for your app!
 
 ![Hello Facepunch.Steamworks](Documentation/Hello_FacepunchSteamworks_00.png)
 ![Hello Facepunch.Steamworks](Documentation/Hello_FacepunchSteamworks_01.png)
