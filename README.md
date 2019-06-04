@@ -77,7 +77,8 @@ private void Game1_Exiting(object sender, EventArgs e)
 
 ## Samples
 
-The greatest thing about Facepunch.Steamworks is, that you can write code in native C#! Say bye bye to manual function calling and finally code like this again:
+The greatest thing about Facepunch.Steamworks is, that you can write code in native C#! 
+Say bye bye to manual function calling and finally code like this again:
 
 ```cs
 foreach ( var friend in SteamFriends.GetFriends() )
