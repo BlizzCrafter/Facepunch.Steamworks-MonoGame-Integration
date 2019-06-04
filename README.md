@@ -43,7 +43,7 @@ protected override void Initialize()
     try
     {
          SteamClient.Init(480);
-         Functions.IsSteamRunning = true;
+         IsSteamRunning = true;
          SteamUtils.OverlayNotificationPosition = NotificationPosition.BottomRight;
     }
     catch (Exception e)
@@ -60,7 +60,7 @@ protected override void Update(GameTime gameTime)
 {
     base.Update(gameTime);
     
-    if (Functions.IsSteamRunning) SteamClient.RunCallbacks();
+    if (IsSteamRunning) SteamClient.RunCallbacks();
 }
 ```
 
@@ -69,7 +69,7 @@ protected override void Update(GameTime gameTime)
 ```cs
 private void Game1_Exiting(object sender, EventArgs e)
 {
-    if (Functions.IsSteamRunning) SteamClient.Shutdown();
+    if (IsSteamRunning) SteamClient.Shutdown();
 }
 ```
 
