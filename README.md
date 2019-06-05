@@ -21,20 +21,7 @@ To set up your own MonoGame with Facepunch.Steamworks integration project you ne
 
 - Add the **Facepunch.Steamworks.dll** per [NuGet](https://www.nuget.org/packages/Facepunch.Steamworks/)
 - Add **[steam_api64.dll](https://github.com/sqrMin1/Facepunch.Steamworks-MonoGame-Integration/tree/master/libs)** as a link to your project and set "copy to output directory" to "copy if newer"
-- Add **[steam_appid.txt](https://github.com/sqrMin1/Facepunch.Steamworks-MonoGame-Integration/tree/master/shared)** as a link to your project and set "copy to output directory" to "copy if newer"
-
-  - Don't forget to add that last file as a ```FileExclusion``` to your Steamworks build-script since you don't want that file to be copied to your customer's destination directory, since it's for debugging purposes only (it lets you try all the steam-stuff without actually having that game listed and active on steam and is important for debugging directly from out of Visual Studio).
-    Your ```depot_build_xxxxxx.vdf``` you're referencing in your ```app_build_xxxxxx.vdf``` should end like this:
-
-    ``````
-    	// but exclude all symbol files  
-    	// This can be a full path, or a path relative to ContentRoot
-      "FileExclusion" "*.pdb"
-      "FileExclusion" "steam_appid.txt"
-    }
-    ``````
-
-- Add your desired **Steamworks AppID** to the steam_appid.txt file
+- ~Add steam_appid.txt~ this step is not needed anymore!
 
 - Initialize the API with the method **SteamClient.Init();** like this:
 
