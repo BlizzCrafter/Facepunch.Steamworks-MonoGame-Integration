@@ -13,13 +13,13 @@ The following is required to successfully compile the solution:
 - 64 bit OS (no x86 support)
 - .NET Framework 4.7.2
 - [MonoGame.Framework.DesktopGL.Core 3.7.0.7](https://www.nuget.org/packages/MonoGame.Framework.DesktopGL.Core/) (included per nuget)
-- [Facepunch.Steamworks](https://github.com/Facepunch/Facepunch.Steamworks) (included per nuget)
+- [Facepunch.Steamworks](https://github.com/Facepunch/Facepunch.Steamworks) (modified source included)
 
 ### How To
 
 To set up your own MonoGame with Facepunch.Steamworks integration project you need to do the following steps:
 
-- Add the **Facepunch.Steamworks.dll** per [NuGet](https://www.nuget.org/packages/Facepunch.Steamworks/)
+- Add the **Facepunch.Steamworks.dll** per [NuGet](https://www.nuget.org/packages/Facepunch.Steamworks/) or the included modified source
 - Add **[steam_api64.dll](https://github.com/sqrMin1/Facepunch.Steamworks-MonoGame-Integration/tree/master/libs)** as a link to your project and set "copy to output directory" to "copy if newer"
 - ~Add steam_appid.txt~ this step is not needed anymore!
 
