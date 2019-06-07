@@ -6,8 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Facepunch.Steamworks" Version="2.0.0" />
     <PackageReference Include="MonoGame.Framework.DesktopGL.Core" Version="3.7.0.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\libs\Facepunch.Steamworks\Facepunch.Steamworks.csproj" />
   </ItemGroup>
 
 </Project>

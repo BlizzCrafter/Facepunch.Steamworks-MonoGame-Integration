@@ -48,9 +48,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Facepunch.Steamworks, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Facepunch.Steamworks.2.0.0\lib\net46\Facepunch.Steamworks.dll</HintPath>
-    </Reference>
     <Reference Include="MonoGame.Framework, Version=3.7.0.7, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\MonoGame.Framework.DesktopGL.Core.3.7.0.7\lib\netstandard2.0\MonoGame.Framework.dll</HintPath>
     </Reference>
@@ -68,13 +65,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\libs\Facepunch.Steamworks\Facepunch.Steamworks.csproj">
+      <Project>{b38cbf1c-2997-40e2-83ee-74d7f05d4a96}</Project>
+      <Name>Facepunch.Steamworks</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Utils\Utils.csproj">
       <Project>{249D4A72-DB5D-4D76-BDEA-AA6F05F52478}</Project>
       <Name>Utils</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\..\libs\steam_api64.dll">
+    <Content Include="..\..\libs\Facepunch.Steamworks\steam_api64.dll">
       <Link>steam_api64.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
