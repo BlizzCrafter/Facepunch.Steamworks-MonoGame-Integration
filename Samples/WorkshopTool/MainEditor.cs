@@ -22,7 +22,7 @@ namespace WorkshopTool
         private ProgressData _ProgressData = new ProgressData();
         private void _ProgressData_Progress(float obj)
         {
-            _ProgressLabel.Text = $"Progress: {obj * 100f}%";
+            _ProgressLabel.Text = $"Progress: {obj * 10f}%";
             statusStrip.Invalidate();
         }
         private ToolStripLabel _ProgressLabel = new ToolStripLabel() { Alignment = ToolStripItemAlignment.Right };
