@@ -1,0 +1,3 @@
+[submodule "libs/Facepunch.Steamworks"]
+	path = libs/Facepunch.Steamworks
+	url = https://github.com/sqrMin1/Facepunch.Steamworks.git
