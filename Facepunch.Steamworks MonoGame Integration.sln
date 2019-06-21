@@ -13,8 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AchievementHunter", "Sample
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkshopTool", "Samples\WorkshopTool\WorkshopTool.csproj", "{AA0E3973-659C-44D5-BB92-35FFDC0438C3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Facepunch.Steamworks", "libs\Facepunch.Steamworks\Facepunch.Steamworks.csproj", "{B38CBF1C-2997-40E2-83EE-74D7F05D4A96}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{8F1EDAE7-2777-48E6-B468-4BEEAB5E4A56}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{7AEB8053-AE23-4E4B-B26E-ADA1EDC89EDB}"
@@ -59,21 +57,12 @@ Global
 		{AA0E3973-659C-44D5-BB92-35FFDC0438C3}.Release|Any CPU.ActiveCfg = Release|x64
 		{AA0E3973-659C-44D5-BB92-35FFDC0438C3}.Release|x64.ActiveCfg = Release|x64
 		{AA0E3973-659C-44D5-BB92-35FFDC0438C3}.Release|x64.Build.0 = Release|x64
-		{B38CBF1C-2997-40E2-83EE-74D7F05D4A96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B38CBF1C-2997-40E2-83EE-74D7F05D4A96}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B38CBF1C-2997-40E2-83EE-74D7F05D4A96}.Debug|x64.ActiveCfg = Debug|x64
-		{B38CBF1C-2997-40E2-83EE-74D7F05D4A96}.Debug|x64.Build.0 = Debug|x64
-		{B38CBF1C-2997-40E2-83EE-74D7F05D4A96}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B38CBF1C-2997-40E2-83EE-74D7F05D4A96}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B38CBF1C-2997-40E2-83EE-74D7F05D4A96}.Release|x64.ActiveCfg = Release|x64
-		{B38CBF1C-2997-40E2-83EE-74D7F05D4A96}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{249D4A72-DB5D-4D76-BDEA-AA6F05F52478} = {7AEB8053-AE23-4E4B-B26E-ADA1EDC89EDB}
-		{B38CBF1C-2997-40E2-83EE-74D7F05D4A96} = {8F1EDAE7-2777-48E6-B468-4BEEAB5E4A56}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E00D7E89-44D4-47C9-861D-F5B41F9AB981}
