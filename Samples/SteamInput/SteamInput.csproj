@@ -128,9 +128,12 @@
     </MonoGameContentReference>
     <None Include="app.config" />
     <None Include="app.manifest" />
+    <None Include="game_actions_480.vdf" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="game_actions_README.txt" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\libs\Facepunch.Steamworks\Facepunch.Steamworks\Facepunch.Steamworks.csproj">
       <Project>{0240c028-da19-4a98-9bc8-6b8e01e6edb1}</Project>

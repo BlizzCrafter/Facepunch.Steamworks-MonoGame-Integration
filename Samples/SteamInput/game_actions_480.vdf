@@ -1,0 +1,33 @@
+"In Game Actions"
+{
+    "actions"
+    {
+        "TestSet"
+        {
+            "title"                 "#Set_Title"
+            "Button"
+            {
+                "DoSomething"       "#Action_DoSomething"
+				"Fire"       		"#Action_Fire"
+            }
+            "StickPadGyro"
+            {
+                "Move"
+                {
+                    "title"         "#Action_Move"
+                    "input_mode"    "joystick_move"
+                }
+            }
+        }
+    }
+    "localization"
+    {
+        "english"
+        {
+           "set_title"              "Test Set"
+            "Action_DoSomething"    "Do Something"
+			"Action_Fire"    		"Fire"
+            "Action_Move"           "Move"
+        }
+    }
+}
