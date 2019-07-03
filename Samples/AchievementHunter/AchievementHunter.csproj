@@ -67,7 +67,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\libs\Facepunch.Steamworks\Facepunch.Steamworks\Facepunch.Steamworks.csproj">
+    <ProjectReference Include="..\..\libs\Facepunch.Steamworks\Facepunch.Steamworks\Facepunch.Steamworks.Win64.csproj">
       <Project>{0240c028-da19-4a98-9bc8-6b8e01e6edb1}</Project>
       <Name>Facepunch.Steamworks</Name>
     </ProjectReference>

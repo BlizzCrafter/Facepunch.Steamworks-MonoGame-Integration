@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\libs\Facepunch.Steamworks\Facepunch.Steamworks\Facepunch.Steamworks.csproj" />
+    <ProjectReference Include="..\libs\Facepunch.Steamworks\Facepunch.Steamworks\Facepunch.Steamworks.Win64.csproj" />
   </ItemGroup>
 
 </Project>
