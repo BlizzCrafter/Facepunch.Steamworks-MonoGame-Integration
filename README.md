@@ -1,5 +1,3 @@
-[![Twitter Follow](https://img.shields.io/twitter/follow/blizz_crafter.svg?style=flat-square&label=Follow&logo=twitter)](https://twitter.com/blizz_crafter)
-
 # Facepunch.Steamworks MonoGame Integration
 Facepunch.Steamworks + MonoGame.Framework = the easiest SteamAPI Integration for your app!
 
@@ -114,5 +112,3 @@ https://github.com/Facepunch/Facepunch.Steamworks
 > Note: You need to start your steam client before executing the examples. Otherwise you won't receive any data -obviously ;)
 
 **Have fun!**
-
-[![Twitter Follow](https://img.shields.io/twitter/follow/blizz_crafter.svg?style=flat-square&label=Follow&logo=twitter)](https://twitter.com/blizz_crafter)
